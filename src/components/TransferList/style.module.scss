@@ -1,0 +1,33 @@
+.list {
+  width: 100%;
+  display: flex;
+  gap: 2rem;
+
+  .controls {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .col {
+    border-radius: 8px;
+    background-color: white;
+    padding: 1rem;
+    flex: 1;
+    border-bottom: 4px solid;
+    border-left: 1px solid gainsboro;
+    border-right: 1px solid gainsboro;
+    border-top: 1px solid gainsboro;
+  }
+
+  .from {
+    border-color: cornflowerblue;
+  }
+
+  .to {
+    border-color: orange;
+  }
+  
+}
