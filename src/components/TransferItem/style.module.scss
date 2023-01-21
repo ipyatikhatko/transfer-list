@@ -1,4 +1,6 @@
 .item {
+  cursor: pointer;
+  padding: 5px 10px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -7,4 +9,41 @@
 
 .label {
   flex: 1;
+  font-size: large;
+}
+
+.checkbox {
+  position: relative;
+  width:25px;
+  height: 25px;
+  border-radius: 50%;
+  vertical-align: middle;
+  border: 1px solid gainsboro;
+  appearance: none;
+  -webkit-appearance: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.checkbox:hover {
+  border: 1px solid gray;
+}
+
+.checkbox:checked::before {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  font-size: large;
+  color: white;
+  content: '✓';
+}
+
+.checkbox:checked {
+  appearance: none;
+  border: 1px solid transparent;
+  clip-path: circle(50% at 50% 50%);
+  background-color: lightgreen;
 }
