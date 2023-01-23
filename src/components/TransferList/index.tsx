@@ -27,6 +27,7 @@ const TransferList = () => {
   const checkedFrom = transferItems.from.filter(item => item.checked);
   const checkedTo = transferItems.to.filter(item => item.checked);
 
+  /** Resets all TransferItems checked state to false  */
   const resetChecked = () => {
     setTransferItems(prev => {
       return {
@@ -41,6 +42,16 @@ const TransferList = () => {
       }
     })
   }
+
+  /**
+   * Handling TransformItem checked state
+   * @param id 
+   * item id
+   * @param col
+   * column name 
+   * @param value 
+   * checkbox value
+   */
 
   const handleCheck = (id: number, col: TransferColumns, value: boolean) => {
     setTransferItems((prev) => {
@@ -59,6 +70,9 @@ const TransferList = () => {
     })
   }
 
+  /** 
+    Moves selected elements from specified collumn to oposite
+  */
   const handleMoveSelected = (col: TransferColumns) => {
     setTransferItems(prev => {
       switch(col) {
@@ -83,7 +97,13 @@ const TransferList = () => {
     resetChecked()
   }
 
+  /**
+   Moves all elements from specified column to oposite
+   from -> to, to -> from
+   specified column will be cleaned after call
+  */
   const handleMoveAll = (col: TransferColumns) => {
+      
     switch(col){
       case 'from':
         setTransferItems(prev => ({
